@@ -1,5 +1,4 @@
-select
-(select distinct Salary 
-from Employee order by salary desc 
-limit 1 offset 1) 
-as SecondHighestSalary;
+/* Write your PL/SQL query statement below */
+SELECT MAX(salary) AS SecondHighestSalary
+FROM employee
+WHERE salary < (SELECT MAX(salary) FROM employee);
